@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/AdminHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="section-title text-center position-relative mb-4">
+        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Administrador <i class="bi bi-wrench-adjustable"></i></h6>
+        <h1 class="display-4"> <span class="adminletras">Accede a cada segmento para mantenimiento</span> </h1>
+    </div>
+
+    <table class="table table-responsive table-striped paginationjs">
+        <section class="contenido">
+            <div class="mostrador" id="mostrador">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="content">
+                                <span class="letras-producto"></span>
+                                <div class="img">
+                                    <img src="~/Image/Productos.jpg" alt="" width="75" height="75">
+                                </div>
+                                &nbsp
+                                &nbsp
+                                &nbsp
+                                <a class="btn btn-outline-dark" asp-area="" asp-controller="Producto" asp-action="Index">
+                                    <i class="bi bi-bag-check-fill"></i>
+                                    Productos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="content">
+                                <span class="letras-producto"></span>
+                                <div class="img">
+                                    <img src="~/Image/Marcas.jpg" alt="" width="75" height="75">
+                                </div>
+                                &nbsp
+                                <a class="btn btn-outline-dark" asp-area="" asp-controller="Marca" asp-action="Index">
+                                    <i class="bi bi-bookmark-star-fill"></i>
+                                    Marcas
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="content">
+                                <span class="letras-producto"></span>
+                                <div class="img">
+                                    <img src="~/Image/Proovedor.png" alt="" width="75" height="75">
+                                </div>
+                                &nbsp
+                                <a class="btn btn-outline-dark" asp-area="" asp-controller="Proveedor" asp-action="Index">
+                                    <i class="bi bi-person-lines-fill"></i>
+                                    Proveedores
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-md-3">
+                        <div class="card">
+                            <div class="content">
+                                <span class="letras-producto"></span>
+                                <div class="img">
+                                    <img src="~/Image/Admin.jpg" alt="" width="75" height="75">
+                                </div>
+                                &nbsp
+                                <a class="btn btn-outline-dark" asp-area="" asp-controller="Administracion" asp-action="Index">
+                                    <i class="bi bi-wrench-adjustable"></i>
+                                    Administradores
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </table>
+</body>
+</html>

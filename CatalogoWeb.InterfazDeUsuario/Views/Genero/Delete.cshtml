@@ -1,0 +1,26 @@
+﻿@model CatalogoWeb.EntidadesDeNegocio.GeneroEN
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+
+<h3>Eliminar Genero</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Eliminar" class="btn btn-prymary" /> |
+        <a class="btn btn-outline-primary" asp-action="Index">Volver a la Lista</a>
+        <span class="text-danger">@ViewBag.Error</span>
+    </form>
+</div>

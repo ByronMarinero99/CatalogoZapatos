@@ -1,0 +1,47 @@
+﻿@model CatalogoWeb.EntidadesDeNegocio.ProveedorEN
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1>Detalles del proveedor</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreEmpresa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreEmpresa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Movil)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Movil)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Correo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Modificar", "Edit", new { ID = Model.Id }, new{@class = "btn btn-outline-success" }) |
+    <a class="btn btn-outline-primary" asp-action="Index">Volver a la Lista</a>
+</div>

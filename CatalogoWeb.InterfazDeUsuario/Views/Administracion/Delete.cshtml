@@ -1,0 +1,42 @@
+﻿@model CatalogoWeb.EntidadesDeNegocio.AdministracionEN
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>Eliminar Administrador</h1>
+
+<h3>¿Está seguro de eliminar este registro?</h3>
+<div>
+    <h4>AdministracionEN</h4>
+    <hr />
+    <dl class="row">
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodigoEmpleado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodigoEmpleado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Clave)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Clave)
+        </dd>
+        
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a class="btn btn-outline-primary" asp-action="Index">Volver a la Lista</a>
+    </form>
+</div>

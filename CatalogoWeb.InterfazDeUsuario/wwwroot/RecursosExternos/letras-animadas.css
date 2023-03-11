@@ -1,0 +1,94 @@
+﻿/*Animacion letras*/
+.adminletras {
+    display: block;
+/*    font-family: monospace;*/
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 32ch;
+    animation: typing 2s steps(32), bling .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/*Animacion letras para las carts de mantenimiento*/
+.letras-producto {
+    display: block;
+    /*    font-family: monospace;*/
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 11ch;
+    animation: typing 2s steps(11), bling .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/*Animacion letras para las carts de mantenimiento*/
+.letras-listaproducto {
+    display: block;
+    /*    font-family: monospace;*/
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 28ch;
+    animation: typing 2s steps(28), bling .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/*Animacion letras para lista de productos cliente*/
+.letras-productocliente {
+    display: block;
+    /*    font-family: monospace;*/
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 22ch;
+    animation: typing 2s steps(22), bling .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+

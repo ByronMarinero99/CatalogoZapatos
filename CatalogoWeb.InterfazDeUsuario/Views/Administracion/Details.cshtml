@@ -1,0 +1,37 @@
+﻿@model CatalogoWeb.EntidadesDeNegocio.AdministracionEN
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodigoEmpleado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodigoEmpleado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Clave)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Clave)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Modificar", "Edit", new { ID = Model.Id }, new{@class = "btn btn-outline-success" }) |
+    <a class="btn btn-outline-primary" asp-action="Index">Volver a la Lista</a>
+</div>

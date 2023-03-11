@@ -1,0 +1,112 @@
+﻿@model CatalogoWeb.EntidadesDeNegocio.ProductoEN
+
+@{
+    ViewData["Title"] = "Create";
+    List<CatalogoWeb.EntidadesDeNegocio.ProveedorEN> proveedor = ViewBag.Proveedores as List<CatalogoWeb.EntidadesDeNegocio.ProveedorEN>;
+    List<CatalogoWeb.EntidadesDeNegocio.MarcaEN> marca = ViewBag.Marcas as List<CatalogoWeb.EntidadesDeNegocio.MarcaEN>;
+    List<CatalogoWeb.EntidadesDeNegocio.GeneroEN> genero = ViewBag.Generos as List<CatalogoWeb.EntidadesDeNegocio.GeneroEN>;
+    List<CatalogoWeb.EntidadesDeNegocio.AdministracionEN> administracion = ViewBag.Administradores as List<CatalogoWeb.EntidadesDeNegocio.AdministracionEN>;
+
+}
+
+<h1>Agregar Nuevo Producto</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Talla" class="control-label"></label>
+                <input asp-for="Talla" class="form-control" />
+                <span asp-validation-for="Talla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <input asp-for="Precio" class="form-control" />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioAnterior" class="control-label"></label>
+                <input asp-for="PrecioAnterior" class="form-control" />
+                <span asp-validation-for="PrecioAnterior" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Imagen" class="control-label"></label>
+                <input asp-for="Imagen" class="form-control" />
+                <span asp-validation-for="Imagen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProveedorID" class="control-label"></label>
+                <select asp-for="ProveedorID" class="form-control">
+                    <option selected value="0">SELECCIONAR</option>
+                    @foreach (var item in proveedor)
+                    {
+                        <option value="@item.Id"> @item.NombreEmpresa</option>
+                    }
+                </select>
+                <span asp-validation-for="ProveedorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MarcaID" class="control-label"></label>
+                <select asp-for="MarcaID" class="form-control">
+                    <option selected value="0">SELECCIONAR</option>
+                    @foreach (var item in marca)
+                    {
+                        <option value="@item.Id"> @item.Nombre</option>
+                    }
+                </select>          
+                <span asp-validation-for="MarcaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneroID" class="control-label"></label>
+                <select asp-for="GeneroID" class="form-control">
+                    <option selected value="0">SELECCIONAR</option>
+                    @foreach (var item in genero)
+                    {
+                        <option value="@item.Id"> @item.Nombre</option>
+                    }
+                </select>
+                <span asp-validation-for="GeneroID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdministracionID" class="control-label"></label>
+                <select asp-for="AdministracionID" class="form-control">
+                    <option selected value="0">SELECCIONAR</option>
+                    @foreach (var item in administracion)
+                    {
+                            <option value="@item.Id"> @item.CodigoEmpleado</option>
+                    }
+                </select>
+                <span asp-validation-for="AdministracionID" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Guardar Producto" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la Lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

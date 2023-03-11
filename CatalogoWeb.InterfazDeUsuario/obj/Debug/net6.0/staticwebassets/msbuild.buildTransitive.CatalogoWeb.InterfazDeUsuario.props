@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\CatalogoWeb.InterfazDeUsuario.props" />
+</Project>

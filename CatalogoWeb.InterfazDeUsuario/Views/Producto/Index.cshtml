@@ -1,0 +1,78 @@
+﻿@model IEnumerable<CatalogoWeb.EntidadesDeNegocio.ProductoEN>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/estilo.css">
+</head>
+<body class="body">
+    @{
+        ViewData["Title"] = "Catalogo Web";
+        List<CatalogoWeb.EntidadesDeNegocio.ProveedorEN> proveedor = ViewBag.Proveedores as List<CatalogoWeb.EntidadesDeNegocio.ProveedorEN>;
+        List<CatalogoWeb.EntidadesDeNegocio.MarcaEN> marca = ViewBag.Marcas as List<CatalogoWeb.EntidadesDeNegocio.MarcaEN>;
+        List<CatalogoWeb.EntidadesDeNegocio.GeneroEN> genero = ViewBag.Generos as List<CatalogoWeb.EntidadesDeNegocio.GeneroEN>;
+    }
+
+
+    <div class="section-title text-center position-relative mb-4">
+        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Productos <i class="bi bi-bag-check-fill"></i></h6>
+        <h1 class="display-4"> <span class="letras-listaproducto">Productos para mantenimiento</span> </h1>
+    </div>
+
+    <div class="d-grid gap-2 d-md-block">
+        <a asp-action="Create" class="btn btn-primary"><i class="bi bi-database-fill-add"></i> Nuevo Producto</a>
+        <a asp-controller="HomeAdmin" asp-action="Index" class="btn btn-danger"><i class="bi bi-backspace-fill"></i> Regresar al menu</a>
+    </div>
+
+    <table class="table table-responsive table-striped paginationjs" style="background-color: #eee;">
+        <section class="contenido">
+            <div class="mostrador" id="mostrador">
+                <div class="row">
+                    
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 mb-4" >
+                        <div class="card">
+                                <div class="courses-list-item position-relative d-block overflow-hidden mb-2" data-mdb-ripple-color="light">
+                                    <img src="@Html.DisplayFor(modelItem => item.Imagen)"
+                                        class="w-100" />
+                                <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-end h-100">
+                                            <h5>
+                                                <span class="badge bg-primary ms-2">Nuevo</span><span class="badge bg-success ms-2">Eco</span><span class="badge bg-danger ms-2">Descuento</span>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <a href="" class="text-reset">
+                                    <h5 class="card-title mb-3">@Html.DisplayFor(modelItem => item.Nombre)</h5>
+                                </a>
+                                <a href="" class="text-reset">
+                                    <p>Talla: @Html.DisplayFor(modelItem => item.Talla) </p>
+                                </a>
+                                <a href="" class="text-reset">
+                                    <p>Descripcion: @Html.DisplayFor(modelItem => item.Descripcion) </p>
+                                </a>
+                                <h6 class="mb-3">
+                                        <s>@Html.DisplayFor(modelItem => item.PrecioAnterior)</s><strong class="ms-2 text-danger">Precio: @Html.DisplayFor(modelItem => item.Precio)</strong>
+                                </h6>
+                                <a href="" class="text-reset">
+                                    @Html.ActionLink("Ver más detalles >>", "Details", new {  id=item.Id}, new {@class = "btn btn-outline-success" })
+                                </a>
+                            </div>
+                                @Html.ActionLink("Eliminar", "Delete", new {  id=item.Id  }, new {@class = "btn btn-outline-danger"})
+                                @Html.ActionLink("Modificar", "Edit", new {  id = item.Id  }, new {@class = "btn btn-outline-"})
+                        </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+    </table>
+</body>
